@@ -203,13 +203,13 @@ function Home() {
             </Link>
           </div>
 
-          <div className="mx-auto grid max-w-[890px] gap-x-5 gap-y-8 md:grid-cols-12">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-5 lg:grid-cols-[1.4fr_1fr_1fr]">
             {featured.map((e, i) => {
-              const span = ["md:col-span-5", "md:col-span-4 md:mt-14", "md:col-span-4", "md:col-span-4 md:mt-10", "md:col-span-4 md:-mt-6"][i];
-              const ratio = ["aspect-[4/3]", "aspect-[4/5]", "aspect-[4/5]", "aspect-square", "aspect-[4/5]"][i];
+              const span = i === 0 ? "col-span-2 lg:col-span-1 lg:row-span-2" : "";
+              const ratio = i === 0 ? "aspect-video lg:aspect-auto lg:min-h-0 lg:flex-1" : "aspect-video";
               return (
-                <Link key={e.slug} to="/event/$slug" params={{ slug: e.slug }} data-reveal className={`group block ${span}`}>
-                  <div className={`relative overflow-hidden bg-muted ${ratio}`}>
+                <Link key={e.slug} to="/event/$slug" params={{ slug: e.slug }} data-reveal className={`group flex min-w-0 flex-col ${span}`}>
+                  <div className={`relative w-full overflow-hidden bg-muted ${ratio}`}>
                     <img src={e.img} alt={e.name} width={e.w} height={e.h} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105" />
                     <span className="absolute left-3 top-3 bg-background px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em]">{e.category}</span>
                     <span className="absolute right-3 top-2 font-display text-2xl text-ink-foreground/90">0{i + 1}</span>
