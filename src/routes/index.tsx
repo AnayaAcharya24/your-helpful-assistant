@@ -94,7 +94,7 @@ function Home() {
           <div className="mb-8 flex items-end justify-between gap-4 border-b-2 border-foreground pb-5">
             <div>
               <Eyebrow>On the horizon</Eyebrow>
-              <Lines text={["What's next"]} className="text-[10vw] md:text-[3.2vw] xl:text-[48px]" />
+              <Lines text={["WHAT'S GOING ON"]} className="text-[10vw] md:text-[3.2vw] xl:text-[48px]" />
             </div>
             <Link to="/events" className="group inline-flex shrink-0 items-center gap-2 border-b-2 border-primary pb-1 text-[12px] font-bold uppercase tracking-[0.16em]">
               More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
